@@ -1,52 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ka">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Techzone - Mechanical Keyboards</title>
+    <title>TechZone - მექანიკური კლავიატურები</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
             background: url('images/background.jpg') no-repeat center center fixed;
             background-size: cover;
-            color: black;
+            color: white;
+            margin: 0;
+            padding: 0;
         }
 
         .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7); /* Darker overlay */
-            z-index: 1;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            transition: 0.3s ease-in-out;
+        }
+
+        .overlay:hover {
+            background: rgba(0, 0, 0, 0.9);
+            transform: scale(1.02);
         }
 
         .container {
-            position: relative;
-            z-index: 2;
             width: 80%;
             margin: auto;
             overflow: hidden;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.1);
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0px 0px 10px gray;
         }
 
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 200px;
+            background: #222;
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .sidebar button {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            background: #444;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .sidebar button:hover {
+            background: #666;
+        }
+
+        .main-content {
+            margin-left: 220px;
+            padding: 20px;
+        }
+
         .product {
+            display: none;
             margin: 20px 0;
             padding: 20px;
             border: 1px solid #ddd;
             border-radius: 10px;
             background: white;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .product:hover {
-            transform: translateY(-5px);
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            color: black;
         }
 
         img {
@@ -58,60 +91,100 @@
         .buy-button {
             display: inline-block;
             margin-top: 10px;
-            padding: 12px 18px;
-            font-size: 16px;
+            padding: 10px 15px;
             color: white;
-            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            background: #007bff;
             text-decoration: none;
             border-radius: 5px;
-            transition: background 0.3s ease, transform 0.2s ease;
-            position: relative;
-            z-index: 3;
+            font-size: 18px;
+            transition: 0.3s;
         }
 
         .buy-button:hover {
-            background: linear-gradient(45deg, #ff4b2b, #ff416c);
-            transform: scale(1.05);
+            background: #0056b3;
         }
 
-        .price {
-            font-size: 20px;
-            font-weight: bold;
+        .active {
+            display: block;
         }
     </style>
+    <script>
+        function showBrand(brand) {
+            let products = document.querySelectorAll('.product');
+            products.forEach(product => {
+                product.classList.remove('active');
+                if (product.classList.contains(brand)) {
+                    product.classList.add('active');
+                }
+            });
+        }
+    </script>
 </head>
 <body>
-    <div class="overlay"></div>
-    <div class="container">
-        <h1>TechZone <span style="font-size: 30px;">🎮</span></h1>
-        <p class="animated-text">საუკეთესო კლავიატურები შენთვის!</p>
+    <div class="sidebar">
+        <button onclick="showBrand('Madlion')">Madlion</button>
+        <button onclick="showBrand('Razer')">Razer</button>
+        <button onclick="showBrand('Ajazz')">Ajazz</button>
+        <button onclick="showBrand('Aula')">Aula</button>
+    </div>
 
-        <div class="product">
-            <img src="images/60he.avif" alt="Mad60He Non-RGB">
-            <h2>Mad60He (Non-RGB)</h2>
-            <p class="price">ფასი: 145₾</p>
-            <a class="buy-button" href="https://www.facebook.com/share/16SHmviN4f/?mibextid=wwXIfr" target="_blank">Buy Now</a>
+    <div class="main-content">
+        <div class="overlay">
+            <h1>TechZone 🎮</h1>
+            <h2 class="animated-text">საუკეთესო კლავიატურები შენთვის!</h2>
         </div>
 
-        <div class="product">
-            <img src="images/60pro.avif" alt="Mad60He Pro RGB">
-            <h2>Mad60He Pro (RGB)</h2>
-            <p class="price">ფასი: 170₾</p>
-            <a class="buy-button" href="https://www.facebook.com/share/16SHmviN4f/?mibextid=wwXIfr" target="_blank">Buy Now</a>
+        <!-- Madlion Keyboards -->
+        <div class="product Madlion active">
+            <img src="images/madlion60he.avif" alt="Madlion 60He">
+            <h2>Madlion 60He</h2>
+            <p style="font-size: 20px;">ფასი: 145₾</p>
+            <a class="buy-button" href="#">Ყიდვა</a>
         </div>
 
-        <div class="product">
-            <img src="images/68he.avif" alt="Mad68He Non-RGB">
-            <h2>Mad68He (Non-RGB)</h2>
-            <p class="price">ფასი: 155₾</p>
-            <a class="buy-button" href="https://www.facebook.com/share/16SHmviN4f/?mibextid=wwXIfr" target="_blank">Buy Now</a>
+        <div class="product Madlion active">
+            <img src="images/madlion60hepro.avif" alt="Madlion 60He Pro">
+            <h2>Madlion 60He Pro</h2>
+            <p style="font-size: 20px;">ფასი: 170₾</p>
+            <a class="buy-button" href="#">Ყიდვა</a>
         </div>
 
-        <div class="product">
-            <img src="images/68pro.avif" alt="Mad68He Pro RGB">
-            <h2>Mad68He Pro (RGB)</h2>
-            <p class="price">ფასი: 180₾</p>
-            <a class="buy-button" href="https://www.facebook.com/share/16SHmviN4f/?mibextid=wwXIfr" target="_blank">Buy Now</a>
+        <div class="product Madlion active">
+            <img src="images/madlion68he.avif" alt="Madlion 68He">
+            <h2>Madlion 68He</h2>
+            <p style="font-size: 20px;">ფასი: 155₾</p>
+            <a class="buy-button" href="#">Ყიდვა</a>
+        </div>
+
+        <div class="product Madlion active">
+            <img src="images/madlion68hepro.avif" alt="Madlion 68He Pro">
+            <h2>Madlion 68He Pro</h2>
+            <p style="font-size: 20px;">ფასი: 180₾</p>
+            <a class="buy-button" href="#">Ყიდვა</a>
+        </div>
+
+        <!-- Razer Keyboards -->
+        <div class="product Razer">
+            <img src="images/razer1.avif" alt="Razer Keyboard">
+            <h2>Razer Keyboard</h2>
+            <p style="font-size: 20px;">ფასი: 200₾</p>
+            <a class="buy-button" href="#">Ყიდვა</a>
+        </div>
+
+        <!-- Ajazz Keyboards -->
+        <div class="product Ajazz">
+            <img src="images/ajazz1.avif" alt="Ajazz Keyboard">
+            <h2>Ajazz Keyboard</h2>
+            <p style="font-size: 20px;">ფასი: 120₾</p>
+            <a class="buy-button" href="#">Ყიდვა</a>
+        </div>
+
+        <!-- Aula Keyboards -->
+        <div class="product Aula">
+            <img src="images/aula1.avif" alt="Aula Keyboard">
+            <h2>Aula Keyboard</h2>
+            <p style="font-size: 20px;">ფასი: 130₾</p>
+            <a class="buy-button" href="#">Ყიდვა</a>
         </div>
     </div>
 </body>

@@ -4,23 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Techzone - Mechanical Keyboards</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             text-align: center;
             background: url('images/background.jpg') no-repeat center center fixed;
             background-size: cover;
-            color: black; /* Changed text color to black */
+            color: black;
         }
 
         .container {
             width: 80%;
             margin: auto;
             overflow: hidden;
-            background: rgba(255, 255, 255, 0.9); /* Slight transparency */
+            background: rgba(255, 255, 255, 0.9);
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0px 0px 10px gray;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
         }
 
         .product {
@@ -29,12 +40,37 @@
             border: 1px solid #ddd;
             border-radius: 10px;
             background: white;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .product:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 0px 20px rgba(0, 123, 255, 0.4);
         }
 
         img {
             width: 300px;
             height: auto;
             border-radius: 10px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 0px 15px rgba(0, 123, 255, 0.6);
+        }
+
+        .product h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #007bff;
+        }
+
+        .product p {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: black;
         }
 
         .buy-button {
@@ -45,16 +81,30 @@
             background: #007bff;
             text-decoration: none;
             border-radius: 5px;
+            font-weight: 600;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
         }
 
         .buy-button:hover {
             background: #0056b3;
+            box-shadow: 0px 0px 15px rgba(0, 123, 255, 0.8);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Techzone<3</h1>
+        <h1>TechZone</h1>
         <p>TechZone - საუკეთესო მექანიკური კლავიატურები შენთვის!</p>
 
         <div class="product">
@@ -67,23 +117,4 @@
         <div class="product">
             <img src="images/60pro.avif" alt="Mad60He Pro RGB">
             <h2>Mad60He Pro (RGB)</h2>
-            <p>ფასი: 170₾</p>
-            <a class="buy-button" href="https://www.facebook.com/share/16SHmviN4f/?mibextid=wwXIfr">Buy Now</a>
-        </div>
-
-        <div class="product">
-            <img src="images/68he.avif" alt="Mad68He Non-RGB">
-            <h2>Mad68He (Non-RGB)</h2>
-            <p>ფასი: 155₾</p>
-            <a class="buy-button" href="https://www.facebook.com/share/16SHmviN4f/?mibextid=wwXIfr">Buy Now</a>
-        </div>
-
-        <div class="product">
-            <img src="images/68pro.avif" alt="Mad68He Pro RGB">
-            <h2>Mad68He Pro (RGB)</h2>
-            <p>ფასი: 180₾</p>
-            <a class="buy-button" href="https://www.facebook.com/share/16SHmviN4f/?mibextid=wwXIfr">Buy Now</a>
-        </div>
-    </div>
-</body>
-</html>
+            <p

@@ -59,35 +59,52 @@
         .container {
             width: 80%;
             margin: auto;
-            overflow: hidden;
             background: rgba(0, 0, 0, 0.85);
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0px 0px 10px gray;
-            transition: transform 0.3s ease-in-out;
         }
 
-        .container:hover {
-            transform: scale(1.02);
+        /* Product Grid Layout */
+        .product-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            justify-content: center;
+            padding: 20px 0;
         }
 
         .product {
-            margin: 20px 0;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            padding: 15px;
             background: rgba(255, 255, 255, 0.1);
-            transition: background 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            position: relative;
         }
 
         .product:hover {
-            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.15);
         }
 
-        img {
-            width: 300px;
+        .product img {
+            width: 100%;
+            max-width: 300px;
             height: auto;
             border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .product:hover img {
+            transform: scale(1.05);
+        }
+
+        .price {
+            color: #ffd700; /* Gold */
+            font-size: 24px;
+            font-weight: bold;
         }
 
         .buy-button {
@@ -100,7 +117,7 @@
             background: linear-gradient(45deg, #007bff, #0056b3);
             text-decoration: none;
             border-radius: 5px;
-            transition: background 0.3s ease-in-out;
+            transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
             border: none;
         }
 
@@ -109,9 +126,24 @@
             transform: scale(1.05);
         }
 
-        .price {
-            font-size: 22px;
-            font-weight: bold;
+        /* Quick Product Preview */
+        .product-preview {
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 5px;
+            display: none;
+            width: 80%;
+            text-align: center;
+        }
+
+        .product:hover .product-preview {
+            display: block;
         }
 
         /* Hide all brand sections initially */
@@ -152,72 +184,19 @@
         <h1>TechZone ❤️</h1>
         <p class="animated-text">საუკეთესო კლავიატურები შენთვის!</p>
 
-        <!-- Madlion Keyboards -->
-        <div class="brand-section active" id="madlion">
+        <div class="brand-section active product-container" id="madlion">
             <div class="product">
                 <img src="images/60he.avif" alt="Mad60He Non-RGB">
                 <h2>Mad60He (Non-RGB)</h2>
                 <p class="price">145₾</p>
+                <div class="product-preview">60% Layout, Non-RGB, Magnetic Switches</div>
                 <a class="buy-button" href="#">ყიდვა</a>
             </div>
             <div class="product">
                 <img src="images/60pro.avif" alt="Mad60He Pro RGB">
                 <h2>Mad60He Pro (RGB)</h2>
                 <p class="price">170₾</p>
-                <a class="buy-button" href="#">ყიდვა</a>
-            </div>
-            <div class="product">
-                <img src="images/68he.avif" alt="Mad68He Non-RGB">
-                <h2>Mad68He (Non-RGB)</h2>
-                <p class="price">155₾</p>
-                <a class="buy-button" href="#">ყიდვა</a>
-            </div>
-            <div class="product">
-                <img src="images/68pro.avif" alt="Mad68He Pro RGB">
-                <h2>Mad68He Pro (RGB)</h2>
-                <p class="price">180₾</p>
-                <a class="buy-button" href="#">ყიდვა</a>
-            </div>
-        </div>
-
-        <!-- Razer Keyboards -->
-        <div class="brand-section" id="razer">
-            <div class="product">
-                <img src="images/razer1.avif" alt="Razer Keyboard 1">
-                <h2>Razer Model 1</h2>
-                <p class="price">250₾</p>
-                <a class="buy-button" href="#">ყიდვა</a>
-            </div>
-        </div>
-
-        <!-- Ajazz Keyboards -->
-        <div class="brand-section" id="ajazz">
-            <div class="product">
-                <img src="images/ajazz_yellow.jpg" alt="Ajazz AK820 Yellow Switches">
-                <h2>Ajazz AK820 (Yellow Switches)</h2>
-                <p class="price">130₾</p>
-                <a class="buy-button" href="#">ყიდვა</a>
-            </div>
-            <div class="product">
-                <img src="images/ajazz_red.jpg" alt="Ajazz AK820 Red Switches">
-                <h2>Ajazz AK820 (Red Switches)</h2>
-                <p class="price">120₾</p>
-                <a class="buy-button" href="#">ყიდვა</a>
-            </div>
-            <div class="product">
-                <img src="images/ajazz_blue.jpg" alt="Ajazz AK820 Blue Switches">
-                <h2>Ajazz AK820 (Blue Switches)</h2>
-                <p class="price">110₾</p>
-                <a class="buy-button" href="#">ყიდვა</a>
-            </div>
-        </div>
-
-        <!-- Aula Keyboards -->
-        <div class="brand-section" id="aula">
-            <div class="product">
-                <img src="images/aula1.avif" alt="Aula Keyboard 1">
-                <h2>Aula Model 1</h2>
-                <p class="price">140₾</p>
+                <div class="product-preview">60% Layout, RGB, Hall Effect Switches</div>
                 <a class="buy-button" href="#">ყიდვა</a>
             </div>
         </div>

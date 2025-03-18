@@ -1,14 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ka">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Techzone - Mechanical Keyboards</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 5px #fff, 0 0 10px #007bff, 0 0 15px #007bff; }
+            50% { text-shadow: 0 0 10px #fff, 0 0 20px #007bff, 0 0 30px #007bff; }
+            100% { text-shadow: 0 0 5px #fff, 0 0 10px #007bff, 0 0 15px #007bff; }
+        }
 
         body {
-            font-family: 'Orbitron', sans-serif;
+            font-family: Arial, sans-serif;
             text-align: center;
             background: url('images/background.jpg') no-repeat center center fixed;
             background-size: cover;
@@ -17,50 +26,28 @@
             padding: 0;
         }
 
-        /* Restored overlay */
         .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
-            z-index: -1;
-        }
-
-        .container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 50px 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
             width: 80%;
             margin: auto;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.1); /* Transparent white overlay */
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1s ease-in-out;
         }
 
-        h1 {
-            font-size: 3rem;
-            text-shadow: 3px 3px 10px rgba(0, 255, 255, 0.8);
-        }
-
-        /* Animated tagline */
-        .tagline {
-            font-size: 1.5rem;
-            color: #ffcc00;
+        .animated-text {
+            font-size: 24px;
+            font-weight: bold;
             animation: glow 2s infinite alternate;
-        }
-
-        @keyframes glow {
-            0% { text-shadow: 0px 0px 5px #ffcc00; }
-            100% { text-shadow: 0px 0px 20px #ffcc00; }
         }
 
         .product {
             margin: 20px 0;
             padding: 20px;
-            border: 1px solid #ddd;
             border-radius: 10px;
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
         }
 
         img {
@@ -72,60 +59,92 @@
         .buy-button {
             display: inline-block;
             margin-top: 10px;
-            padding: 10px 15px;
+            padding: 12px 20px;
+            font-size: 18px;
             color: white;
             background: linear-gradient(45deg, #007bff, #00d4ff);
             text-decoration: none;
             border-radius: 5px;
-            font-weight: bold;
             transition: all 0.3s ease-in-out;
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.7);
         }
 
         .buy-button:hover {
-            background: linear-gradient(45deg, #0056b3, #00aaff);
-            transform: scale(1.1);
+            background: linear-gradient(45deg, #0056b3, #0099cc);
+            box-shadow: 0 0 15px rgba(0, 123, 255, 1);
         }
 
         .price {
-            font-size: 1.8rem;
+            font-size: 22px;
             font-weight: bold;
             color: #ffcc00;
         }
+
+        .features {
+            margin-top: 40px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+        }
+
+        .features h2 {
+            color: #ffcc00;
+        }
+
+        .features ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .features li {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
     </style>
 </head>
 <body>
-    <div class="overlay"></div> <!-- Restored Overlay -->
-
-    <div class="container">
+    <div class="overlay">
         <h1>TechZone ⚡</h1>
-        <p class="tagline">საუკეთესო კლავიატურები შენთვის!</p>
+        <p class="animated-text">საუკეთესო კლავიატურები შენთვის!</p>
 
         <div class="product">
             <img src="images/60he.avif" alt="Mad60He Non-RGB">
             <h2>Mad60He (Non-RGB)</h2>
             <p class="price">ფასი: 145₾</p>
-            <a class="buy-button" href="https://www.facebook.com/share/16SHmviN4f/?mibextid=wwXIfr">Buy Now</a>
+            <a class="buy-button" href="https://www.facebook.com/share/16SHmviN4f/?mibextid=wwXIfr">ყიდვა</a>
         </div>
 
         <div class="product">
             <img src="images/60pro.avif" alt="Mad60He Pro RGB">
             <h2>Mad60He Pro (RGB)</h2>
             <p class="price">ფასი: 170₾</p>
-            <a class="buy-button" href="https://www.facebook.com/share/16SHmviN4f/?mibextid=wwXIfr">Buy Now</a>
+            <a class="buy-button" href="https://www.facebook.com/share/16SHmviN4f/?mibextid=wwXIfr">ყიდვა</a>
         </div>
 
         <div class="product">
             <img src="images/68he.avif" alt="Mad68He Non-RGB">
             <h2>Mad68He (Non-RGB)</h2>
             <p class="price">ფასი: 155₾</p>
-            <a class="buy-button" href="https://www.facebook.com/share/16SHmviN4f/?mibextid=wwXIfr">Buy Now</a>
+            <a class="buy-button" href="https://www.facebook.com/share/16SHmviN4f/?mibextid=wwXIfr">ყიდვა</a>
         </div>
 
         <div class="product">
             <img src="images/68pro.avif" alt="Mad68He Pro RGB">
             <h2>Mad68He Pro (RGB)</h2>
             <p class="price">ფასი: 180₾</p>
-            <a class="buy-button" href="https://www.facebook.com/share/16SHmviN4f/?mibextid=wwXIfr">Buy Now</a>
+            <a class="buy-button" href="https://www.facebook.com/share/16SHmviN4f/?mibextid=wwXIfr">ყიდვა</a>
+        </div>
+
+        <div class="features">
+            <h2>🔹 ჩვენთან რატომ?</h2>
+            <ul>
+                <li>✅ მაღალი ხარისხის მექანიკური კლავიატურები</li>
+                <li>⚡ სწრაფი და უსაფრთხო მიწოდება</li>
+                <li>💰 საუკეთესო ფასები</li>
+                <li>🔧 გარანტირებული ხარისხი</li>
+            </ul>
         </div>
     </div>
 </body>

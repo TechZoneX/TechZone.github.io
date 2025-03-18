@@ -4,10 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Techzone - Mechanical Keyboards</title>
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -15,6 +12,8 @@
             background: url('images/background.jpg') no-repeat center center fixed;
             background-size: cover;
             color: black;
+            margin: 0;
+            padding: 0;
         }
 
         .container {
@@ -24,14 +23,15 @@
             background: rgba(255, 255, 255, 0.9);
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0px 0px 10px gray;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
             animation: fadeIn 1.5s ease-in-out;
         }
 
         h1 {
             font-family: 'Orbitron', sans-serif;
-            font-size: 3rem;
-            font-weight: 700;
+            font-size: 36px;
+            color: #007bff;
+            text-shadow: 2px 2px 10px rgba(0, 123, 255, 0.5);
         }
 
         .product {
@@ -40,12 +40,13 @@
             border: 1px solid #ddd;
             border-radius: 10px;
             background: white;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
 
         .product:hover {
-            transform: translateY(-5px);
-            box-shadow: 0px 0px 20px rgba(0, 123, 255, 0.4);
+            transform: scale(1.03);
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
         }
 
         img {
@@ -57,20 +58,7 @@
 
         img:hover {
             transform: scale(1.05);
-            box-shadow: 0px 0px 15px rgba(0, 123, 255, 0.6);
-        }
-
-        .product h2 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #007bff;
-        }
-
-        .product p {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: black;
+            box-shadow: 0px 0px 15px rgba(0, 123, 255, 0.5);
         }
 
         .buy-button {
@@ -81,30 +69,24 @@
             background: #007bff;
             text-decoration: none;
             border-radius: 5px;
-            font-weight: 600;
-            transition: background 0.3s ease, box-shadow 0.3s ease;
+            font-weight: bold;
+            transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
 
         .buy-button:hover {
             background: #0056b3;
-            box-shadow: 0px 0px 15px rgba(0, 123, 255, 0.8);
+            box-shadow: 0px 0px 10px rgba(0, 123, 255, 0.8);
         }
 
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>TechZone</h1>
+        <h1>Techzone 🚀</h1>
         <p>TechZone - საუკეთესო მექანიკური კლავიატურები შენთვის!</p>
 
         <div class="product">
@@ -117,4 +99,23 @@
         <div class="product">
             <img src="images/60pro.avif" alt="Mad60He Pro RGB">
             <h2>Mad60He Pro (RGB)</h2>
-            <p
+            <p>ფასი: 170₾</p>
+            <a class="buy-button" href="https://www.facebook.com/share/16SHmviN4f/?mibextid=wwXIfr">Buy Now</a>
+        </div>
+
+        <div class="product">
+            <img src="images/68he.avif" alt="Mad68He Non-RGB">
+            <h2>Mad68He (Non-RGB)</h2>
+            <p>ფასი: 155₾</p>
+            <a class="buy-button" href="https://www.facebook.com/share/16SHmviN4f/?mibextid=wwXIfr">Buy Now</a>
+        </div>
+
+        <div class="product">
+            <img src="images/68pro.avif" alt="Mad68He Pro RGB">
+            <h2>Mad68He Pro (RGB)</h2>
+            <p>ფასი: 180₾</p>
+            <a class="buy-button" href="https://www.facebook.com/share/16SHmviN4f/?mibextid=wwXIfr">Buy Now</a>
+        </div>
+    </div>
+</body>
+</html>

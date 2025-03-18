@@ -1,4 +1,4 @@
-[2:48 pm, 18/03/2025] Sandro: <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -53,7 +53,7 @@
             width: 80%;
             margin: auto;
             overflow: hidden;
-            background: rgba(0, 0, 0, 0.85); /* Darker overlay */
+            background: rgba(0, 0, 0, 0.85);
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0px 0px 10px gray;
@@ -69,7 +69,7 @@
             padding: 20px;
             border: 1px solid #ddd;
             border-radius: 10px;
-            background: rgba(255, 255, 255, 0.1); /* Slight transparency */
+            background: rgba(255, 255, 255, 0.1);
             transition: background 0.3s ease-in-out;
         }
 
@@ -145,221 +145,7 @@
         <h1>TechZone ❤️</h1>
         <p class="animated-text">საუკეთესო კლავიატურები შენთვის!</p>
 
-        <!-- Madlion Keyboards -->
-        <div class="brand-section active" id="madlion">
-            <div class="product">
-                <img src="images/mad60he.avif" alt="Mad60He Non-RGB">
-                <h2>Mad60He (Non-RGB)</h2>
-                <p class="price">145₾</p>
-                <a class="buy-button" href="#">Buy Now</a>
-            </div>
-            <div class="product">
-                <img src="images/mad60hepro.avif" alt="Mad60He Pro RGB">
-                <h2>Mad60He Pro (RGB)</h2>
-                <p class="price">170₾</p>
-                <a class="buy-button" href="#">Buy Now</a>
-            </div>
-        </div>
-
-        <!-- Razer Keyboards -->
-        <div class="brand-section" id="razer">
-            <div class="product">
-                <img src="images/razer1.avif" alt="Razer Keyboard 1">
-                <h2>Razer Model 1</h2>
-                <p class="price">250₾</p>
-                <a class="buy-button" href="#">Buy Now</a>
-            </div>
-        </div>
-
-        <!-- Ajazz Keyboards -->
-        <div class="brand-section" id="ajazz">
-            <div class="product">
-                <img src="images/ajazz1.avif" alt="Ajazz Keyboard 1">
-                <h2>Ajazz Model 1</h2>
-                <p class="price">160₾</p>
-                <a class="buy-button" href="#">Buy Now</a>
-            </div>
-        </div>
-
-        <!-- Aula Keyboards -->
-        <div class="brand-section" id="aula">
-            <div class="product">
-                <img src="images/aula1.avif" alt="Aula Keyboard 1">
-                <h2>Aula Model 1</h2>
-                <p class="price">140₾</p>
-                <a class="buy-button" href="#">Buy Now</a>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        function toggleSidebar() {
-            var sidebar = document.getElementById("sidebar");
-            if (sidebar.style.left === "-250px") {
-                sidebar.style.left = "0";
-            } else {
-                sidebar.style.left = "-250px";
-            }
-        }
-
-        function showBrand(brand) {
-            var sections = document.getElementsByClassName("brand-section");
-            for (var i = 0; i < sections.length; i++) {
-                sections[i].classList.remove("active");
-            }
-            document.getElementById(brand).classList.add("active");
-        }
-    </script>
-</body>
-</html>
-[2:52 pm, 18/03/2025] Sandro: <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Techzone - Mechanical Keyboards</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: url('images/background.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: white;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Sidebar styles */
-        .sidebar {
-            position: fixed;
-            left: -250px;
-            top: 0;
-            width: 250px;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            padding-top: 60px;
-            transition: left 0.3s ease;
-        }
-
-        .sidebar a {
-            padding: 10px 20px;
-            text-decoration: none;
-            color: white;
-            display: block;
-            transition: 0.3s;
-        }
-
-        .sidebar a:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        .toggle-btn {
-            position: fixed;
-            left: 10px;
-            top: 10px;
-            background: #007bff;
-            color: white;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-            background: rgba(0, 0, 0, 0.85); /* Darker overlay */
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px gray;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .container:hover {
-            transform: scale(1.02);
-        }
-
-        .product {
-            margin: 20px 0;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.1); /* Slight transparency */
-            transition: background 0.3s ease-in-out;
-        }
-
-        .product:hover {
-            background: rgba(255, 255, 255, 0.3);
-        }
-
-        img {
-            width: 300px;
-            height: auto;
-            border-radius: 10px;
-        }
-
-        .buy-button {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 12px 20px;
-            font-size: 16px;
-            font-weight: bold;
-            color: white;
-            background: linear-gradient(45deg, #007bff, #0056b3);
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s ease-in-out;
-            border: none;
-        }
-
-        .buy-button:hover {
-            background: linear-gradient(45deg, #0056b3, #003f7f);
-            transform: scale(1.05);
-        }
-
-        .price {
-            font-size: 22px;
-            font-weight: bold;
-        }
-
-        /* Hide all brand sections initially */
-        .brand-section {
-            display: none;
-        }
-
-        /* Show active brand */
-        .active {
-            display: block;
-        }
-
-        /* Animated text */
-        .animated-text {
-            font-size: 24px;
-            font-weight: bold;
-            text-align: center;
-            animation: fadeInOut 2s infinite alternate;
-        }
-
-        @keyframes fadeInOut {
-            0% { opacity: 0.4; }
-            100% { opacity: 1; }
-        }
-    </style>
-</head>
-<body>
-    <div class="toggle-btn" onclick="toggleSidebar()">☰ Brands</div>
-
-    <div class="sidebar" id="sidebar">
-        <a href="#" onclick="showBrand('madlion')">Madlion</a>
-        <a href="#" onclick="showBrand('razer')">Razer</a>
-        <a href="#" onclick="showBrand('ajazz')">Ajazz</a>
-        <a href="#" onclick="showBrand('aula')">Aula</a>
-    </div>
-
-    <div class="container">
-        <h1>TechZone ❤️</h1>
-        <p class="animated-text">საუკეთესო კლავიატურები შენთვის!</p>
-
-        <!-- Madlion Keyboards (Now all 4 included) -->
+        <!-- Madlion Keyboards (All 4 are now included) -->
         <div class="brand-section active" id="madlion">
             <div class="product">
                 <img src="images/mad60he.avif" alt="Mad60He Non-RGB">
